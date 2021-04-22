@@ -1,7 +1,9 @@
-
 # sbt-setting-keys
 
-This is a placeholder README.md for a new repository
+![](https://img.shields.io/github/v/release/hmrc/sbt-setting-keys)
+
+
+SBT plugin providing common keys across plugins.
 
 ### License
 
