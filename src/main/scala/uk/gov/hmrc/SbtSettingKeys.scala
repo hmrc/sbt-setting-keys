@@ -30,7 +30,7 @@ object SbtSettingKeys extends AutoPlugin {
   import autoImport._
   override lazy val projectSettings: Seq[Setting[_]] =
     Seq(
-      publicArtefact := makePublicallyAvailableOnBintray.value,
+      isPublicArtefact := makePublicallyAvailableOnBintray.value,
       makePublicallyAvailableOnBintray := false
     )
 }
@@ -40,7 +40,7 @@ trait Keys {
   val makePublicallyAvailableOnBintray =
     settingKey[Boolean]("Deprecated - use publicArtefact instead")
 
-  val publicArtefact =
+  val isPublicArtefact =
     settingKey[Boolean]("Indicates whether an artifact is public and should be published publically")
 }
 
