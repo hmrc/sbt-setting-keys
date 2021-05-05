@@ -41,7 +41,11 @@ trait Keys {
     settingKey[Boolean]("Deprecated - use publicArtefact instead")
 
   val isPublicArtefact =
-    settingKey[Boolean]("Indicates whether an artifact is public and should be published publically")
+    // this key is only read by sbt-artifactory, which is available as a global plugin on build server
+    // suppress the warning given for development when sbt-artifactory is not present
+    Suppression.suppressUnusedWarning(
+      settingKey[Boolean]("Indicates whether an artifact is public and should be published publically")
+    )
 }
 
 object Keys extends Keys
