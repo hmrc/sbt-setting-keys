@@ -28,7 +28,7 @@ object SbtSettingKeys extends AutoPlugin {
   object autoImport extends Keys
 
   import autoImport._
-  override lazy val projectSettings: Seq[Setting[_]] =
+  override def globalSettings: Seq[Setting[_]] =
     Seq(
       isPublicArtefact := makePublicallyAvailableOnBintray.value,
       makePublicallyAvailableOnBintray := false
