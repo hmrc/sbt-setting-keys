@@ -30,16 +30,11 @@ object SbtSettingKeys extends AutoPlugin {
   import autoImport._
   override def globalSettings: Seq[Setting[_]] =
     Seq(
-      isPublicArtefact := makePublicallyAvailableOnBintray.value,
-      makePublicallyAvailableOnBintray := false
+      isPublicArtefact := false
     )
 }
 
 trait Keys {
-  @deprecated("Use publicArtefact instead, reading this value is dangerous!", "0.1.0")
-  val makePublicallyAvailableOnBintray =
-    settingKey[Boolean]("Deprecated - use publicArtefact instead")
-
   val isPublicArtefact =
     settingKey[Boolean]("Indicates whether an artifact is public and should be published publically")
       // this key is only read by sbt-artifactory, which is available as a global plugin on build server
