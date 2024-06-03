@@ -1,5 +1,5 @@
 name := "sbt-setting-keys"
-majorVersion := 0
+majorVersion := 1
 scalaVersion := "2.12.18"
 
 sbtPlugin := true
